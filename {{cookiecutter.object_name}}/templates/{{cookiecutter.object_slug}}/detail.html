@@ -6,6 +6,6 @@
 {% block pagecontent %}
 	<h1>datacenter app</h1>
 
-<a href="{% url '{% endraw %}{{cookiecutter.app_slug}}{% raw %}:{% endraw %}{{cookiecutter.object_slug}}{% raw %}update' farm.id %}"><span class="glyphicon glyphicon-home"></span> Update</a>
+<a href="{% url '{% endraw %}{{cookiecutter.app_slug}}{% raw %}:{% endraw %}{{cookiecutter.object_slug}}{% raw %}update' {% endraw %}{{cookiecutter.object_slug}}{% raw %}.id %}"><span class="glyphicon glyphicon-home"></span> Update</a>
 <a href="{% url '{% endraw %}{{cookiecutter.app_slug}}{% raw %}:{% endraw %}{{cookiecutter.object_slug}}{% raw %}list' %}"><span class="glyphicon glyphicon-home"></span> List</a>
 {% endblock pagecontent %}{% endraw %}
