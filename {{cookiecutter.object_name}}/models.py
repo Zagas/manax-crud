@@ -2,6 +2,7 @@
 from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.timezone import now
+import uuid
 
 from libmanax import depot
 
@@ -9,7 +10,7 @@ from libmanax import depot
 class {{cookiecutter.object_name}}(models.Model):
     """{{cookiecutter.object_name}}
     """
-    id = models.CharField(primary_key=True, max_length=6, default=depot.newid(6), editable=False)
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     created = models.DateTimeField('created', default=now())
     modified = models.DateTimeField('modified', default=now())
     name = models.CharField(max_length=50, unique=True)
