@@ -1,0 +1,26 @@
+{% raw %}{% extends "{% endraw %}{{cookiecutter.app_slug}}{% raw %}/base_sidebar_3.html" %}
+{% comment %}{% extends "{% endraw %}{{cookiecutter.app_slug}}{% raw %}/base.html" %}{% endcomment %}
+{% load crispy_forms_tags %}
+
+{% block title %}{% endraw %}{{cookiecutter.object_name}}{% raw %} {% if create %}Create{% else %}Edit{% endif %}{% endblock %}
+
+{% block pagecontent %}
+
+    <h1>{% endraw %}{{cookiecutter.object_name}}{% raw %} {% if create %}create{% else %}edit{% endif %}</h1>
+    {% if not create%}<a href="{% url '{% endraw %}{{cookiecutter.app_slug}}{% raw %}:{% endraw %}{{cookiecutter.object_slug}}{% raw %}create' %}">Create</a>{% endif %}
+
+  {% if create %}
+    {% url '{% endraw %}{{cookiecutter.app_slug}}{% raw %}:{% endraw %}{{cookiecutter.object_slug}}{% raw %}create' as action_url %}
+  {% else %}
+    {% url '{% endraw %}{{cookiecutter.app_slug}}{% raw %}:{% endraw %}{{cookiecutter.object_slug}}{% raw %}update' pk=form.instance.pk as action_url %}
+  {% endif %}
+
+  <form action="{{ action_url }}" method="post" accept-charset="utf-8">
+    {{ form|crispy }}
+
+    {% csrf_token %}
+
+    <p><input type="submit" class="btn btn-default" value="Save"></p>
+  </form>
+
+{% endblock pagecontent %}{% endraw %}

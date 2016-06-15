@@ -1,0 +1,39 @@
+{% raw %}{% extends "{% endraw %}{{cookiecutter.app_slug}}{% raw %}/base_sidebar_3.html" %}
+{% comment %}{% extends "{% endraw %}{{cookiecutter.app_slug}}{% raw %}/base.html" %}{% endcomment %}
+
+{% block title %}{% endraw %}{{cookiecutter.object_name}}{% raw %} List{% endblock %}
+
+{% block pagecontent %}
+
+    <h1>Listing</h1>
+    <a href="{% url '{% endraw %}{{cookiecutter.app_slug}}{% raw %}:{% endraw %}{{cookiecutter.object_slug}}{% raw %}create' %}">Create</a>
+    <ul>
+        {% for {% endraw %}{{cookiecutter.object_slug}}{% raw %} in {% endraw %}{{cookiecutter.object_slug}}{% raw %}_list %}
+            <li>
+                {{ {% endraw %}{{cookiecutter.object_slug}}{% raw %} }}
+                <a href="{% url '{% endraw %}{{cookiecutter.object_slug}}{% raw %}:{% endraw %}{{cookiecutter.object_slug}}{% raw %}detail' {% endraw %}{{cookiecutter.object_slug}}{% raw %}.id %}">Details</a>
+                <a href="{% url '{% endraw %}{{cookiecutter.app_slug}}{% raw %}:{% endraw %}{{cookiecutter.object_slug}}{% raw %}update' {% endraw %}{{cookiecutter.object_slug}}{% raw %}.id %}">Update</a>
+                <a href="{% url '{% endraw %}{{cookiecutter.app_slug}}{% raw %}:{% endraw %}{{cookiecutter.object_slug}}{% raw %}delete' {% endraw %}{{cookiecutter.object_slug}}{% raw %}.id %}">Delete</a>
+            </li>
+        {% empty %}
+                <p>No items.</p>
+        {% endfor %}
+    </ul>
+
+    {% if is_paginated %}
+        <div class="pagination">
+            <span class="page-links">
+                {% if page_obj.has_previous %}
+                    <a href="{% url '{% endraw %}{{cookiecutter.app_slug}}{% raw %}:{% endraw %}{{cookiecutter.object_slug}}{% raw %}list' %}?page={{ page_obj.previous_page_number }}">previous</a>
+                {% endif %}
+                <span class="page-current">
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                </span>
+                {% if page_obj.has_next %}
+                    <a href="{% url '{% endraw %}{{cookiecutter.app_slug}}{% raw %}:{% endraw %}{{cookiecutter.object_slug}}{% raw %}list' %}?page={{ page_obj.next_page_number }}">next</a>
+                {% endif %}
+            </span>
+        </div>
+    {% endif %}
+
+{% endblock pagecontent %}{% endraw %}

@@ -1,0 +1,6 @@
+# manax-crud howto
+
+
+
+
+

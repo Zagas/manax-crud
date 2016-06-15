@@ -1,0 +1,11 @@
+{% raw %}{% extends "{% endraw %}{{cookiecutter.app_slug}}{% raw %}/base_sidebar_3.html" %}
+{% comment %}{% extends "{% endraw %}{{cookiecutter.app_slug}}{% raw %}/base.html" %}{% endcomment %}
+
+{% block title %}{{farm.name}} {% endraw %}{{cookiecutter.object_name}}{% raw %} Details{% endblock %}
+
+{% block pagecontent %}
+	<h1>datacenter app</h1>
+
+<a href="{% url '{% endraw %}{{cookiecutter.app_slug}}{% raw %}:{% endraw %}{{cookiecutter.object_slug}}{% raw %}update' farm.id %}"><span class="glyphicon glyphicon-home"></span> Update</a>
+<a href="{% url '{% endraw %}{{cookiecutter.app_slug}}{% raw %}:{% endraw %}{{cookiecutter.object_slug}}{% raw %}list' %}"><span class="glyphicon glyphicon-home"></span> List</a>
+{% endblock pagecontent %}{% endraw %}

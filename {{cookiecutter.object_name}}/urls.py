@@ -1,0 +1,33 @@
+urlpatterns = [
+    # {{cookiecutter.object_name}} 
+    url(
+        regex=r'^{{cookiecutter.object_slug}}/$',
+        view=views.{{cookiecutter.object_name}}Home,
+        name='{{cookiecutter.object_slug}}home'
+    ),
+    url(
+        regex=r'^{{cookiecutter.object_slug}}/list/$',
+        view=views.{{cookiecutter.object_name}}List,
+        name='{{cookiecutter.object_slug}}list'
+    ),
+    url(
+        regex=r'^{{cookiecutter.object_slug}}/create/$',
+        view=views.{{cookiecutter.object_name}}Create,
+        name='{{cookiecutter.object_slug}}create'
+    ),
+    url(
+        regex=r'^{{cookiecutter.object_slug}}/(?P<id>[^/]+)/detail/$',
+        view=views.{{cookiecutter.object_name}}Detail,
+        name='{{cookiecutter.object_slug}}detail'
+    ),
+    url(
+        regex=r'^{{cookiecutter.object_slug}}/(?P<id>[^/]+)/update/$',
+        view=views.{{cookiecutter.object_name}}Update,
+        name='{{cookiecutter.object_slug}}update'
+    ),
+    url(
+        regex=r'^{{cookiecutter.object_slug}}/(?P<id>[^/]+)/delete/$',
+        view=views.{{cookiecutter.object_name}}Delete,
+        name='{{cookiecutter.object_slug}}delete'
+    ),
+]

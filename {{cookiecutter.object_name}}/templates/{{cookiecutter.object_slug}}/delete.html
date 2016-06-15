@@ -1,0 +1,15 @@
+{% raw %}{% extends "{% endraw %}{{cookiecutter.app_slug}}{% raw %}/base_sidebar_3.html" %}
+{% comment %}{% extends "{% endraw %}{{cookiecutter.app_slug}}{% raw %}/base.html" %}{% endcomment %}
+
+{% block title %}{% endraw %}{{cookiecutter.object_name}}{% raw %} Delete{% endblock %}
+
+{% block pagecontent %}
+	<h1>{% endraw %}{{cookiecutter.object_slug}}{% raw %} app</h1>
+
+<a href="{% url '{% endraw %}{{cookiecutter.app_slug}}{% raw %}:{% endraw %}{{cookiecutter.object_slug}}{% raw %}create' %}"><span class="glyphicon glyphicon-home"></span> Create</a>
+<a href="{% url '{% endraw %}{{cookiecutter.app_slug}}{% raw %}:{% endraw %}{{cookiecutter.object_slug}}{% raw %}list' %}"><span class="glyphicon glyphicon-home"></span> List</a>
+
+<br>
+
+<h1>TODO</h1>
+{% endblock pagecontent %}{% endraw %}
