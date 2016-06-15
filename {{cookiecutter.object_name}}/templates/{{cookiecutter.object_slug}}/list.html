@@ -11,7 +11,7 @@
         {% for {% endraw %}{{cookiecutter.object_slug}}{% raw %} in {% endraw %}{{cookiecutter.object_slug}}{% raw %}_list %}
             <li>
                 {{ {% endraw %}{{cookiecutter.object_slug}}{% raw %} }}
-                <a href="{% url '{% endraw %}{{cookiecutter.object_slug}}{% raw %}:{% endraw %}{{cookiecutter.object_slug}}{% raw %}detail' {% endraw %}{{cookiecutter.object_slug}}{% raw %}.id %}">Details</a>
+                <a href="{% url '{% endraw %}{{cookiecutter.app_slug}}{% raw %}:{% endraw %}{{cookiecutter.object_slug}}{% raw %}detail' {% endraw %}{{cookiecutter.object_slug}}{% raw %}.id %}">Details</a>
                 <a href="{% url '{% endraw %}{{cookiecutter.app_slug}}{% raw %}:{% endraw %}{{cookiecutter.object_slug}}{% raw %}update' {% endraw %}{{cookiecutter.object_slug}}{% raw %}.id %}">Update</a>
                 <a href="{% url '{% endraw %}{{cookiecutter.app_slug}}{% raw %}:{% endraw %}{{cookiecutter.object_slug}}{% raw %}delete' {% endraw %}{{cookiecutter.object_slug}}{% raw %}.id %}">Delete</a>
             </li>
