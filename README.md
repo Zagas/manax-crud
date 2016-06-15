@@ -1,1 +1,4 @@
-cd apps/<app>cookiecutter https://github.com/managai/manax-curd
+
+cd apps/<app>
+
+cookiecutter https://github.com/managai/manax-crud
