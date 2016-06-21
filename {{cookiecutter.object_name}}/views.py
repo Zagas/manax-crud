@@ -2,6 +2,9 @@ from django.shortcuts import get_object_or_404, redirect, render
 
 from .models import {{cookiecutter.object_name}}
 from .forms import {{cookiecutter.object_name}}Form
+{% if cookiecutter.list_as_table == "y" %}
+from .tables import {{cookiecutter.object_name}}Table
+{% endif %}
 
 # {{cookiecutter.object_name}}
 
@@ -15,7 +18,13 @@ def {{cookiecutter.object_name}}List(request):
     """List {{cookiecutter.object_slug}}
     """
     {{cookiecutter.object_slug}}_list = {{cookiecutter.object_name}}.objects.all()
-    context = {'{{cookiecutter.object_slug}}_list': {{cookiecutter.object_slug}}_list}
+
+    {% if cookiecutter.list_as_table == "y" %}
+    table = {{cookiecutter.object_name}}Table({{cookiecutter.object_slug}}_list)
+    RequestConfig(request).configure(table)
+    {% endif %}
+
+    context = { {% if cookiecutter.list_as_table == "y" %}'table': table, {% endif %}'{{cookiecutter.object_slug}}_list': {{cookiecutter.object_slug}}_list}
     return render(request, '{{cookiecutter.app_slug}}/{{cookiecutter.object_slug}}/list.html', context)  
 
 def {{cookiecutter.object_name}}Create(request):

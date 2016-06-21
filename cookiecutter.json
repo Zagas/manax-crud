@@ -1,5 +1,7 @@
 {
     "object_name": "Object",
     "object_slug": "object",
-    "app_slug": "appslug"
+    "app_slug": "appslug",
+    "list_as_table": "n",
+    "action_button": "n"
 }

@@ -6,6 +6,13 @@
 {% block pagecontent %}
 	<h1>datacenter app</h1>
 
+{% if cookiecutter.action_button == "y" %}
+<div class="row">
+    <a href="#" class="btn btn-info" role="button">TODO</a>
+</div>
+{% endif %}
+
+
 <a href="{% url '{% endraw %}{{cookiecutter.app_slug}}{% raw %}:{% endraw %}{{cookiecutter.object_slug}}{% raw %}update' {% endraw %}{{cookiecutter.object_slug}}{% raw %}.id %}"><span class="glyphicon glyphicon-home"></span> Update</a>
 <a href="{% url '{% endraw %}{{cookiecutter.app_slug}}{% raw %}:{% endraw %}{{cookiecutter.object_slug}}{% raw %}delete' {% endraw %}{{cookiecutter.object_slug}}{% raw %}.id %}"><span class="glyphicon glyphicon-home"></span> Delete</a>
 <a href="{% url '{% endraw %}{{cookiecutter.app_slug}}{% raw %}:{% endraw %}{{cookiecutter.object_slug}}{% raw %}list' %}"><span class="glyphicon glyphicon-home"></span> List</a>

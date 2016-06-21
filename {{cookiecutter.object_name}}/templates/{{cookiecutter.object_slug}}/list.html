@@ -1,12 +1,26 @@
 {% raw %}{% extends "{% endraw %}{{cookiecutter.app_slug}}{% raw %}/base_sidebar_3.html" %}
 {% comment %}{% extends "{% endraw %}{{cookiecutter.app_slug}}{% raw %}/base.html" %}{% endcomment %}
 
+{% if cookiecutter.list_as_table == "y" %}
+{% load render_table from django_tables2 %}
+{% endif %}
+
 {% block title %}{% endraw %}{{cookiecutter.object_name}}{% raw %} List{% endblock %}
+
+{% if cookiecutter.list_as_table == "y" %}
+{% block appcss %}
+    <link rel="stylesheet" href="{{ STATIC_URL }}django_tables2/themes/paleblue/css/screen.css" />
+{% endblock appcss %}
+{% endif %}
 
 {% block pagecontent %}
 
-    <h1>Listing</h1>
-    <a href="{% url '{% endraw %}{{cookiecutter.app_slug}}{% raw %}:{% endraw %}{{cookiecutter.object_slug}}{% raw %}create' %}">Create</a>
+    <h1>{% endraw %}{{cookiecutter.object_name}}{% raw %} List</h1>
+    <a href="{% url '{% endraw %}{{cookiecutter.app_slug}}{% raw %}:{% endraw %}{{cookiecutter.object_slug}}{% raw %}create' %}">Create</a><br>
+
+{% if cookiecutter.list_as_table == "y" %}
+    {% render_table table %}
+{% else %}
     <ul>
         {% for {% endraw %}{{cookiecutter.object_slug}}{% raw %} in {% endraw %}{{cookiecutter.object_slug}}{% raw %}_list %}
             <li>
@@ -35,5 +49,6 @@
             </span>
         </div>
     {% endif %}
+{% endif %}
 
 {% endblock pagecontent %}{% endraw %}
