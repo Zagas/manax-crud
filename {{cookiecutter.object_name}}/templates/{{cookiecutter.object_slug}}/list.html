@@ -1,9 +1,11 @@
 {% raw %}{% extends "{% endraw %}{{cookiecutter.app_slug}}{% raw %}/base_sidebar_3.html" %}
 {% comment %}{% extends "{% endraw %}{{cookiecutter.app_slug}}{% raw %}/base.html" %}{% endcomment %}
 
+{% endraw %}
 {% if cookiecutter.list_as_table == "y" %}
-{% load render_table from django_tables2 %}
+{% raw %}{% load render_table from django_tables2 %}{% endraw %}
 {% endif %}
+{% raw %}
 
 {% block title %}{% endraw %}{{cookiecutter.object_name}}{% raw %} List{% endblock %}
 

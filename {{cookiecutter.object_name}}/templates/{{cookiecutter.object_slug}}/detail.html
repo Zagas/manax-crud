@@ -1,16 +1,18 @@
 {% raw %}{% extends "{% endraw %}{{cookiecutter.app_slug}}{% raw %}/base_sidebar_3.html" %}
 {% comment %}{% extends "{% endraw %}{{cookiecutter.app_slug}}{% raw %}/base.html" %}{% endcomment %}
 
-{% block title %}{{farm.name}} {% endraw %}{{cookiecutter.object_name}}{% raw %} Details{% endblock %}
+{% block title %}{% endraw %}{{cookiecutter.object_name}}{% raw %} Details{% endblock %}
 
 {% block pagecontent %}
 	<h1>datacenter app</h1>
 
+{% endraw %}
 {% if cookiecutter.action_button == "y" %}
 <div class="row">
     <a href="#" class="btn btn-info" role="button">TODO</a>
 </div>
 {% endif %}
+{% raw %}
 
 
 <a href="{% url '{% endraw %}{{cookiecutter.app_slug}}{% raw %}:{% endraw %}{{cookiecutter.object_slug}}{% raw %}update' {% endraw %}{{cookiecutter.object_slug}}{% raw %}.id %}"><span class="glyphicon glyphicon-home"></span> Update</a>

@@ -1,7 +1,8 @@
 {
     "object_name": "Object",
-    "object_slug": "object",
+    "object_slug": "{{ cookiecutter.object_name.lower()|replace(' ', '_')|replace('-', '_') }}",
     "app_slug": "appslug",
     "list_as_table": "n",
-    "action_button": "n"
+    "action_button": "n",
+    "file_upload": "n"
 }

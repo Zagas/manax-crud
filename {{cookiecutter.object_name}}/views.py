@@ -1,4 +1,7 @@
 from django.shortcuts import get_object_or_404, redirect, render
+{% if cookiecutter.list_as_table == "y" %}
+from django_tables2 import RequestConfig
+{% endif %}
 
 from .models import {{cookiecutter.object_name}}
 from .forms import {{cookiecutter.object_name}}Form

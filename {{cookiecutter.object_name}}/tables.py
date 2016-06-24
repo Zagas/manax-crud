@@ -1,5 +1,4 @@
 {% if cookiecutter.list_as_table == "y" %}
-
 import django_tables2 as tables
 from django_tables2.utils import A  # alias for Accessor
 
@@ -9,7 +8,7 @@ class {{ cookiecutter.object_name }}Table(tables.Table):
     """{{ cookiecutter.object_name }} Table
     """
     name = tables.LinkColumn('{{ cookiecutter.app_slug }}:{{ cookiecutter.object_slug }}detail',
-                               args=[A('name')])
+                               args=[A('id')])
       
     class Meta:
         model = {{ cookiecutter.object_name }}
