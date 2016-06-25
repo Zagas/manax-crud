@@ -9,20 +9,28 @@
 
 {% block title %}{% endraw %}{{cookiecutter.object_name}}{% raw %} List{% endblock %}
 
+{% endraw %}
 {% if cookiecutter.list_as_table == "y" %}
+{% raw %}
 {% block appcss %}
     <link rel="stylesheet" href="{{ STATIC_URL }}django_tables2/themes/paleblue/css/screen.css" />
 {% endblock appcss %}
+{% endraw %}
 {% endif %}
+{% raw %}
 
 {% block pagecontent %}
 
     <h1>{% endraw %}{{cookiecutter.object_name}}{% raw %} List</h1>
     <a href="{% url '{% endraw %}{{cookiecutter.app_slug}}{% raw %}:{% endraw %}{{cookiecutter.object_slug}}{% raw %}create' %}">Create</a><br>
 
+{% endraw %}
 {% if cookiecutter.list_as_table == "y" %}
+{% raw %}
     {% render_table table %}
+{% endraw %}
 {% else %}
+{% raw %}
     <ul>
         {% for {% endraw %}{{cookiecutter.object_slug}}{% raw %} in {% endraw %}{{cookiecutter.object_slug}}{% raw %}_list %}
             <li>
@@ -51,6 +59,8 @@
             </span>
         </div>
     {% endif %}
+{% endraw %}
 {% endif %}
+{% raw %}
 
 {% endblock pagecontent %}{% endraw %}
